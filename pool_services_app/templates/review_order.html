@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Dashboard! </title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"crossorigin="anonymous"/>
+</head>
+<body>
+    <style>
+        .background{
+            
+            background-image: url('/static/img/juan-carlos-rivera-DBjKoBnW6M8-unsplash.jpg'); /* The image used */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+            height: 1000px;
+        }
+    </style>
+    </head>
+    <body class="background" >
+
+
+        <nav class="navbar  navbar-expand-lg navbar  navbar navbar-light" style="background-color:rgb(173, 232, 244, .8); ">
+            <a class="navbar-brand justify-content-lg-center "> <b> John's Pool Service</b></a>
+            <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNav">
+            <ul class="navbar-nav ">
+
+                <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                </li>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+            </div>
+    </nav>
+
+        {% if messages %}
+        <ul class="messages">    
+        {% for message in messages %}    
+        <li {% if message.tags %} class=" text-danger {{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+        {% endif %}
+    <div class="row shadow shadow-lg mt-5" style= 'background-color:rgb(173, 232, 244, .8);  border-radius: 5px;'>
+        <div class="col form-group">
+            <h1> Welcome, <span class='text-dark font-weight-light'>{{logged_in.first_name}}!</span></h1> 
+            <!-- introducing the user who log in ABOVE-->
+
+            <div class="card w-50">
+                <div class="card-body" style= 'background-color:rgb(173, 232, 244, .8); border-radius: 5px;' >
+                    <h5 class="card-title"><h4> Service information</h4></h5>
+                    <p class="card-text">
+                        <h5>Service: <span class='text-dark'>{{the_order.service.service}}</span></h5>
+                        <h5>Price: <span class='text-dark'>{{the_order.service.price}}</span></h5>
+                        <h5>Description: <span class = 'text-dark'>{{the_order.service.description}}</span></h5>
+                    </p>
+                </div>
+            </div>
+    </div>
+    </div>
+</body>
+</html>
+

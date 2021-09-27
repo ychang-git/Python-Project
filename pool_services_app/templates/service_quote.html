@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> Pool Services </title>
+        {% load static %}       
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+        <!-- <img src="{% static 'images/image.jpg' %}" /> -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"/>
+    <style>
+        .background{
+            
+            background-image: url('/static/img/awv-x-IHvrqKpW8-unsplash.jpg'); /* The image used */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+            height: 1200px;
+        }
+    </style>
+    </head>
+    <body class='background'>
+        <nav class="navbar navbar-expand-lg navbar navbar navbar-light" style="background-color:rgb(173, 232, 244, .8);">
+        <a class="navbar-brand" href="#">Pool Services</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item active">
+            <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+            </li>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/login_page">Login</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <div  class="container mt-lg-5" style='background-color:rgb(173, 232, 244, .8); border-radius: 5px; border: 2px solid white; text-align: center;'>
+            <div><h1>Services</h1></div>
+            <!-- <div class="col form-control"></div> -->
+
+                <div class="card-deck mt-lg-3">
+                    <div style="background-color:rgb(173, 232, 244, .8); border-radius: 5px; align-content: center;" class="card p-3 border-light text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Summer (start of season)</b></h5>
+                        <p class="card-text">
+                            <li>winter cover removed and stored</li>
+                            <li>all equipment will be assembled and operational</li>
+                            <li> entire pool will be brushed, vacuumed and the chemistry balanced</li>
+                            <li>equipment will be inspected</li>
+                                <li>any issues will be reported to the homeowner </li>
+                            (excessive chemicals will be charged accordingly)</p>
+                    </div>
+                    </div>
+                    <div style="background-color:rgb(173, 232, 244, .8); border-radius: 5px; align-content: center;"  class="card p-3 border-light text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Weekly Cleaning and Maintenance services</b></h5>
+                        <p class="card-text"> <b> * on a day of your preference</b>
+                            <li>Water will be balanced</li>
+                            <li>pool vacuumed, skimmed, brushed, and saftey cover closed(if applicable)</li>
+                            <li>circulation equipment serviced, filter area/mechanical pit will be maintained</li>
+                            <li>weekly service includes all basic chemicals for balancing water.</li>
+                            <li>consistent access to the pool and equipment is required</li>
+                            </p>
+                    </div>
+                    </div>
+                    <div style="background-color:rgb(173, 232, 244, .8); border-radius: 5px; align-content: center;"  class="card p-3 border-light text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"> <b>Winter (end of  season)</b> </h5>
+                        <p class="card-text">
+                            <li>pool will be lowered</li>
+                            <li>water will be super chlorinated</li>
+                            <li>all circulation piping will be blown out and plugged</li>
+                            <li>equipment will be dis-assembled and stored</li>
+                            <li>heater will be winterized and treated to limit rodent nesting</li>
+                            <li>winter cover will be installed(if applicable)</li>
+                            equipment will be inspected and any issues will be reported to the homeowner</p>
+                    </div>
+                    </div>
+                </div>
+            
+            </div> 
+                
+        </div>
+                <div  class="container mt-lg-5" style='background-color:rgb(173, 232, 244, .8); border-radius: 5px; border: 2px solid white;'>
+                    <div class="row">
+                        <div class="col">
+                    <div>
+                        <h2>For A Quote</h2>
+                        <label>please fill and submit the form below.</label>
+                    <form style= 'align-content: center;' action="/service_quote" method="POST">
+                        
+                        <div class="form-group" >
+                            <div class="col-md-8 mb-3">
+                            <input type="text" class="form-control" placeholder="First name" name="fname" required>
+                            </div>
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <input type="text" class="form-control" name="lname" placeholder="Last name"  required>
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <input type="text" class="form-control" name="number" placeholder="Phone Number"  required>
+                        </div>
+                        <div class="form-group">
+                        <div class="col-md-8 mb-8">
+                            <textarea  placeholder="Message" class="form-control"required name="message" cols="20" rows="3"></textarea>
+                        </div>  
+                            <button class="btn btn-outline-dark form-left" type="submit">Submit form</button>
+                        </div>
+                    
+                    </form>
+                    </div>
+                    </div>
+
+                    <div class="col">
+                        <h2>Contact Information</h2>
+                        <p>For general inquiries regarding our products and services or to inquire about job openings:
+                            John's Pools </p>
+                            <p>102 Old Riverhead Road
+                            Westhampton, NY 11978</p>
+                            <p>Phone: 555-245-7422</p>
+                            <p>johnspools@gmail.com</p>
+                            
+                    </div>
+                </div>
+
+    </div>
+</body>
+</html>
